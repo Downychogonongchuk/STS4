@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- "${}" controller 와 똑같이 -->
+	<h2>model4.html</h2>
+	<!--  dto 객체 한번에 -->
+	<h4 th:text="${demo}"></h4> 
+	<!-- 필드 따로따로 -->
+	<h5 th:text= "${demo.name}"></h5>
+	<h5 th:te3xt= "${demo.age}"></h5>
+</body>
+</html>

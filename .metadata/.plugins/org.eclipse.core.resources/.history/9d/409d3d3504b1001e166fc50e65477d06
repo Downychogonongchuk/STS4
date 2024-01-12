@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>form2.html</h2>
+	form2.html에는 input 태그하나가 있으며,
+			입력을 하고 전송버튼을 클릭하면 form-param2라는 주소로 입력값을 전달한다
+			<form action="/form-param2" method="post">
+			<input type="text" name="f1" >
+			<input type="submit" value="전송">
+			</form>
+</body>
+</html>

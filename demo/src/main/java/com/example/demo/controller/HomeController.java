@@ -1,9 +1,14 @@
 package com.example.demo.controller;
 
+import org.springframework.boot.Banner.Mode;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.demo.dto.DemoDTO;
 
 // @Controller : 해당 클래스를 컨트롤러 클래스로 스프링빈에 등록
 // 스프링빈: 스프링이 관리해주는 자바 객체 
@@ -50,13 +55,55 @@ public class HomeController {
 		System.out.println("p2=" + p2);
 		return "index";
 	}
-	
-	
-	
+	@GetMapping("/model1")
+	public String model1(Model model) {
+		String str1 = "오늘은 금요일";
+		// 화면에 가져갈 데이터를 담음
+		model.addAttribute("s1",str1);
+		return "model1";
+	}
+	@GetMapping("/form2")
+		public String model3() {
+		return "form2";
+	}
+	@PostMapping("/form-param2")
+	public String model2(@RequestParam("f1")String f1, Model model2) { // 담아갈 값이 있을 때 Model
+		String f2 =f1;
+		model2.addAttribute("f1",f2);
+		return "model2";
+	}
+	@GetMapping("/form3")
+	public String form3() {
+		return "form3";
+	}
+	@PostMapping("/form-param3")
+	public String formParam3(@RequestParam("p1")String p1,
+			@RequestParam("p2")String p2,Model model) {
+		model.addAttribute("p1",p1);
+		model.addAttribute("p2",p2);
+			return "model3";
+	}
+	public HomeController() {
+		// 
+	}@GetMapping("/form4")
+		public String form4() {
+		return "form4";
+	}
+//	@PostMapping("/form-param4")
+//		public String formParam4(@RequestParam("name")String name,
+//				@RequestParam("age")int age,Model model) {
+//		System.out.println(name+age);
+//		model.addAttribute("name",name);
+//		model.addAttribute("age",age);
+//		return "index";
+//	}
+	@PostMapping("/form-param4")
+	public String formParam4(@ModelAttribute DemoDTO demoDTO,Model model) {
+	System.out.println(demoDTO);
+	model.addAttribute("demo",demoDTO);
+	return "model4";
+	} 
 }
-
-
-
 
 
 

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>form4.html</h2>
+	<form action="/form-param4" method="post">
+		<input type="text" name="name">
+		<input type="number" name="age">
+		<input type="submit" value="전송">
+	</form>
+</body>
+</html>
