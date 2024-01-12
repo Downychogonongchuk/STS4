@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.dto.DemoDTO;
+import com.example.demo.dto.nameDTO;
 
 // @Controller : 해당 클래스를 컨트롤러 클래스로 스프링빈에 등록
 // 스프링빈: 스프링이 관리해주는 자바 객체 
@@ -72,20 +73,30 @@ public class HomeController {
 		model2.addAttribute("f1",f2);
 		return "model2";
 	}
+//	@GetMapping("/form3")
+//	public String form3() {
+//		return "form3";
+//	}
+//	@PostMapping("/form-param3")
+//	public String formParam3(@RequestParam("p1")String p1,
+//			@RequestParam("p2")String p2,Model model) {
+//		model.addAttribute("p1",p1);
+//		model.addAttribute("p2",p2);
+//			return "model3";
+//	}
 	@GetMapping("/form3")
 	public String form3() {
 		return "form3";
 	}
 	@PostMapping("/form-param3")
-	public String formParam3(@RequestParam("p1")String p1,
-			@RequestParam("p2")String p2,Model model) {
-		model.addAttribute("p1",p1);
-		model.addAttribute("p2",p2);
+	public String formParam3(@ModelAttribute nameDTO namedto,  Model model){
+		// @ModelAttribute nameDTO namedto,  Model model){
+		// DTO 타입 dto변수명
+		model.addAttribute("dto",namedto);
 			return "model3";
 	}
-	public HomeController() {
-		// 
-	}@GetMapping("/form4")
+
+	@GetMapping("/form4")
 		public String form4() {
 		return "form4";
 	}
@@ -97,6 +108,7 @@ public class HomeController {
 //		model.addAttribute("age",age);
 //		return "index";
 //	}
+	
 	@PostMapping("/form-param4")
 	public String formParam4(@ModelAttribute DemoDTO demoDTO,Model model) {
 	System.out.println(demoDTO);
