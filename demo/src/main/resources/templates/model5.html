@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>model5.html</h2>
+	<table>
+	<tr th:each= "demo : ${list}">
+	<!-- "demo : ${list}" -->
+	<!-- "반복변수:${리스트를 반복해서 보여준다} -->
+		<td th:text="${demo.name}"></td>
+		<td th:text="${demo.age}"></td>
+	</tr>
+	</table>
+</body>
+</html>
