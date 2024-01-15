@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>save.html</h2>
+<!-- 이름(studentName), 학번(studentNumber),  전화번호(studentMobile)을 입력받고
+	save 라는 주소로 post 방식으로 전송
+	컨트롤러에서 StudentDTO 객체로 입력한 정보를 받음  -->
+	
+	<form action="save" method="post">
+		<input type="text" name="studentName" placeholder="학생이름"><br>
+		<input type="text" name="studentNumber" placeholder="학번"><br>
+		<input type="text" name="studentMobile" placeholder="전화번호">
+		<input type="submit" value="전송">
+	</form>
+	
+	
+</body>
+</html>
