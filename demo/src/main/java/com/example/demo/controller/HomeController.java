@@ -128,7 +128,7 @@ public class HomeController {
 			demoDTO.setName("name"+i);
 			demoDTO.setAge(i);
 			list.add(demoDTO);
-		}
+		} 
 		model.addAttribute("list", list);
 		return "model5";
 	}
