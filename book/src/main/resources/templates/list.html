@@ -23,15 +23,18 @@ table, tr, td, th {
 			<th>가격</th>
 		</tr>
 		<tr th:each="book:${bookList}">
-			<td><a th:href="@{|/book/${book.id}|}"
+		<td th:text="${book.id}"></td>
+		
+			<td><a th:href="@{|/book/${book.id}|}" 
 				th:text="${book.bookName}"></a></td>
-			<td th:text="${book.bookName}"></td>
+			
 			<td th:text="${book.bookAuthor}"></td>
 			<td th:text="${book.bookPublisher}"></td>
 			<td th:text="${book.bookPrice}"></td>
 			<td>
 				<button th:onclick="detail([[${book.id}]])">조회</button>
 			</td>
+			
 			<td>
 				<button th:onclick="delete_fn([[${book.id}]])">삭제</button>
 			</td>
